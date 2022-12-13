@@ -38,7 +38,7 @@ public class ConnectionPool {
         return connection;
     }
 
-    public void releaseConnection(Connection connection) {
+    public  void releaseConnection(Connection connection) {
         if (connection.getClass() == ProxyConnection.class) {
             usedConnections.remove(connection);
             freeConnections.offer((ProxyConnection) connection);
